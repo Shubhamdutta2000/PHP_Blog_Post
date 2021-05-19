@@ -4,8 +4,8 @@
     require 'config/db.php';
 
     // get id from query string
-    // mysql_real_escape_string — Escapes special characters in a string for use in an SQL statement
-    $id = mysql_real_escape_string($conn, $_GET['id']);
+    // mysqli_real_escape_string — Escapes special characters in a string for use in an SQL statement
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
 
     // fetch posts
     $query = 'SELECT * FROM posts WHERE id = '.$id;
