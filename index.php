@@ -45,7 +45,7 @@
                 <p>
                     <?php echo $post['body']; ?>
                 </p>
-                <a class="mb-5 btn btn-default" 
+                <a class="mb-5 btn btn-outline-primary" 
                    href="post.php?id=<?php echo $post['id']; ?>"
                 >
                     Read more ...

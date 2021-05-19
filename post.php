@@ -67,19 +67,21 @@
         <?php echo $post['body']; ?>
       </p>
 
-      <!-- For deleting particular post  -->
-      <form method="post" class="float-right" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-          <input type="hidden" name="delete_id" value="<?php echo $post['id']; ?>" />
-          <input type="submit" name="delete" class="btn btn-danger" value="Delete" />
-      </form>
+      <div class="d-flex justify-content-between">
+          <!-- For editing post (redirect to editPost page) -->
+          <a class="mb-5 btn btn-outline-info " 
+              href="editPost.php?id=<?php echo $post['id']; ?>"
+          >
+              Edit Post
+          </a>
 
-      <!-- For editing post (redirect to editPost page) -->
-      <a class="mb-5 btn " 
-          href="editPost.php?id=<?php echo $post['id']; ?>"
-      >
-          Edit Post
-      </a>
+           <!-- For deleting particular post  -->
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+              <input type="hidden" name="delete_id" value="<?php echo $post['id']; ?>" />
+              <input type="submit" name="delete" class="btn btn-outline-danger" value="Delete" />
+          </form>
 
+      </div>
   </div>
 
 <?php include 'templates/footer.php'; ?>
