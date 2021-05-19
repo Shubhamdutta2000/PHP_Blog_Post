@@ -3,8 +3,8 @@
     require 'config/config.php';
     require 'config/db.php';
 
-    // fetch posts
-    $query = 'SELECT * FROM posts';
+    // fetch posts order by created_at column in descending order
+    $query = 'SELECT * FROM posts ORDER BY created_at DESC';
 
     // get results
     $result = mysqli_query($conn, $query);

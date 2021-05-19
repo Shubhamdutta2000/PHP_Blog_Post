@@ -45,6 +45,12 @@
       <p>
         <?php echo $post['body']; ?>
       </p>
+      <a class="mb-5 btn " 
+          href="editPost.php?id=<?php echo $post['id']; ?>"
+      >
+          Edit Post
+      </a>
+
   </div>
 
 <?php include 'templates/footer.php'; ?>
