@@ -3,6 +3,27 @@
     require 'config/config.php';
     require 'config/db.php';
 
+    //////////////////////  Delete particular post data by id    ////////////////////////
+    
+    // Check For Delete
+    if(isset($_POST['delete'])){
+
+        // GET data from form
+        $delete_id = mysqli_real_escape_string($conn, $_POST['delete_id']);
+
+        $query = "DELETE FROM posts WHERE id='$delete_id'";
+
+        // data is successfuly deleted from posts table then redirect to home page
+        if(mysqli_query($conn, $query)) {
+            echo ROOT_URL;
+            header('Location: '. ROOT_URL . '');
+        }else {
+            echo "ERROR: ". mysqli_error($conn);
+        }
+    }
+
+
+    ///////////////////////    for getting particular id post data   /////////////////////////
     // get id from query string
     // mysqli_real_escape_string — Escapes special characters in a string for use in an SQL statement
     $id = mysqli_real_escape_string($conn, $_GET['id']);
@@ -45,6 +66,14 @@
       <p>
         <?php echo $post['body']; ?>
       </p>
+
+      <!-- For deleting particular post  -->
+      <form method="post" class="float-right" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+          <input type="hidden" name="delete_id" value="<?php echo $post['id']; ?>" />
+          <input type="submit" name="delete" class="btn btn-danger" value="Delete" />
+      </form>
+
+      <!-- For editing post (redirect to editPost page) -->
       <a class="mb-5 btn " 
           href="editPost.php?id=<?php echo $post['id']; ?>"
       >
