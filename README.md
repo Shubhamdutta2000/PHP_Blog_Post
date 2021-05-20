@@ -12,14 +12,12 @@
 
 ## USAGE
 
-1.
+- ```
+  git clone https://github.com/Shubhamdutta2000/PHP_Blog_Post.git
+  ```
 
-```
-git clone https://github.com/Shubhamdutta2000/PHP_Blog_Post.git
-```
+- Run apache Server and mysql Server in your xampp application
 
-2.  Run apache Server and mysql Server in your xampp application
+- Add your mysql username password in config/config.php
 
-3.  Add your mysql username password in config/config.php
-
-4.  Create a new database in phpMyAdmin of xamp application and add the Database name to the config/config.php file
+- Create a new database in phpMyAdmin of xamp application and add the Database name to the config/config.php file
