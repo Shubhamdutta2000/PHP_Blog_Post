@@ -12,9 +12,11 @@
 
 ## USAGE
 
-1.  ```
-    git clone https://github.com/Shubhamdutta2000/PHP_Blog_Post.git
-    ```
+1.
+
+```
+git clone https://github.com/Shubhamdutta2000/PHP_Blog_Post.git
+```
 
 2.  Run apache Server and mysql Server in your xampp application
 
